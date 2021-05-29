@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.sendFile('./index.html')
 })
 //Post Method for '/search' url
-app.post('/detect', (req, res) => {
+app.post('/upload', (req, res) => {
     res.write('searching for ' + req.body.key + ':\n') //here we need to catch the name of algo
     let key = req.body.key
     if (req.files) {
