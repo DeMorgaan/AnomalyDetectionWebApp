@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+  <link href="https://fonts.googleapis.com/css2?family=Electrolize&amp;family=Fira+Code:wght@300&amp;family=Mate+SC&amp;family=Space+Mono&amp;display=swap" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
 
   <title>Anomaly Detection Server</title>
@@ -17,7 +17,7 @@
       <h1>Anomaly Detection Web App</h1>
     </div>
     <div class="upload-files">
-      <form action="file:///C:/detect" method="post" enctype="multipart/form-data" name="searchForm" target="result">
+      <form action="/detect" method="POST" enctype="multipart/form-data" name="searchForm" target="result">
         <div class="select">
           <div class="file-text">
             <h6>Choose an algorithm:</h6>
@@ -25,7 +25,7 @@
           </div>
 
           <select name="algos" id="algos">
-            <option value="regressionLine">Regression Line</option>
+            <option value="regression">Regression Line</option>
             <option value="hybrid">Hybrid Algorithm</option>
 
           </select>
@@ -48,7 +48,7 @@
           </div>
           <div class="file-up">
             <label class="file-lbl" for="upl-file">upload</label>
-            <input id="upl-file" class="upl-file" type="file" name="anomal_CSV">
+            <input id="upl-file" class="upl-file" type="file" name="ano">
           </div>
         </div>
 
@@ -60,7 +60,7 @@
 
     </div>
     <div class="result">
-      <iframe class="iframe" name="result" width="90%" height="400" src="./Anomaly Detection Server_files/saved_resource.html">
+      <iframe class="iframe" name="result" width="100%" height="400" src="./Anomaly Detection Server_files/saved_resource.html">
 
       </iframe>
 

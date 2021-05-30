@@ -1,28 +1,61 @@
-//imports modules
+//requires
 const express = require('express')
 const fileUpload = require('express-fileupload')
-const model = require('../Model/SearchInFile')
+//const model = require('../model/SearchInFile')
+//set up
+
+//var multer  = require('multer')
+//var upload = multer({ dest: 'uploads/' })
+
 const app = express()
-//define app uses
 app.use(express.urlencoded({
     extended: false
 }))
-app.use(fileUpload({}))
+app.use(fileUpload())
 app.use(express.static('../View'))
-//Get Method for '/' url
-app.get('/', (req, res) => {
-    res.sendFile('./index.html')
+
+//http get
+app.get("/", (req, res) => {
+    res.sendFile("index.html")//there name
 })
-//Post Method for '/search' url
-app.post('/upload', (req, res) => {
-    res.write('searching for ' + req.body.key + ':\n') //here we need to catch the name of algo
-    let key = req.body.key
-    if (req.files) {
-        let file = req.files.normal_CSV
-        let result = model.searchText(key, file.data.toString())
-        res.write(result)
+
+//http post
+app.post("/detect", (req, res) => { // /detect
+    res.write('Calculation of anomalies according to ' + req.body.algos +':\n')
+    var algo = req.body.algos
+    if(req.files) {
+
+     let file1 = req.files.normal_CSV;
+  //    let file2 = req.files.anomal_CSV;
+
+        console.log(req.files.length)
+
+
+    //    let file2 = req.files.ano;
+
+       var secData = file1.data.toString();
+
+    //    var firstFileData = file2.data.toString();
+
+        if (algo.localeCompare("regression")) {
+	        //detection phase
+        //  console.log(file1.data.toString());
+        }
+        else if (algo.localeCompare("hybrid")){
+	        //detection phase
+        }
+        else{
+    	    res.write('Invalid Algorithm!\n')
+        }
+
+        res.write('The algorithm is: ' + algo + '\n The first file is: \n' + secData + 'The second file is: ')
+
+    }
+    else{
+	    res.write('Error in files!\n')
     }
     res.end()
 })
-//starting server on port 8080
-app.listen(8080, ()=>console.log("server started at 8080"))
+
+//listen port
+app.listen(8080)
