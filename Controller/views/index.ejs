@@ -13,10 +13,20 @@
         }
     </style>
 </head>
-<h3>Presening the results: <h3/>
-
 <body>
-<h3>Presening the results: <h3/>
+<h3>Presening the results: N-O-W? <h3/>
+
+  <table>
+    <tr>
+      <!-- <%= JSON.stringify(data) %> -->
+      <ul>
+          <% data.forEach(function(o) { %>
+              <li><%= o.timeStep %> - <%= o.columns %></li>
+          <% }); %>
+    </tr>
+    <p>Succeed.</p>
+  </table>
+
 
 
 

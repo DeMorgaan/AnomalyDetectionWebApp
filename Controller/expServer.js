@@ -2,6 +2,7 @@
 const express = require('express')
 const fileUpload = require('express-fileupload')
 
+
 //set up
 const app = express()
 app.use(express.urlencoded({
@@ -9,9 +10,10 @@ app.use(express.urlencoded({
 }))
 app.use(fileUpload())
 app.use(express.static('../View'))
-var router = express.Router()
+// app.set('views', './views');
 
 app.set('view engine', 'ejs');
+
 
 
 // //http get - Homepage
@@ -20,19 +22,18 @@ app.set('view engine', 'ejs');
 //     // res.render("home.ejs");
 // })
 
-router.get('/test', function(req, res, next) {
-    res.render('index', {title: 'GET test'});
-});
-
 //http get
 app.get("/", (req, res) => {
-    res.sendFile("index.html")//there name
+    // res.sendFile("index.html")//there name
+
+    // res.sendFile(path.join(__dirname, '../View', 'index.html'));
+    res.sendFile('index.html' , { root : __dirname});
+
 })
 
 
-
 app.post("/detect", (req, res) => { // /detect
-    res.write('Calculation of anomalies according to ' + req.body.algos +':\n')
+    // res.write('Calculation of anomalies according to ' + req.body.algos +':\n')
     let algo = req.body.algos
     if(req.files) {
         let file1 = req.files.normalCsv
@@ -72,19 +73,17 @@ app.post("/detect", (req, res) => { // /detect
   //   res.write('The time step is: + ' + obj.anomalies[i].timeStep + '\n'
   //                 + 'The columns are: ' + obj.anomalies[i].columns + '\n')
   // }
-  // var data = JSON.parse('[{"timeStep":"87", "columns":"A, B"}, {"timeStep":"19", "columns":"C, D"}]');
+  var data = JSON.parse('[{"timeStep":"87", "columns":"A, B"}, {"timeStep":"19", "columns":"C, D"}, {"timeStep":"50", "columns":"C, E"}, {"timeStep":"37", "columns":"B, D"}]');
 
   // res.write('\n' + normalData + '\n' + anomalData + '\n' + algo)
  //
- var data = JSON.parse('[{"timeStep":"87", "columns":"A, B"}, {"timeStep":"19", "columns":"C, D"}]');
+ // var data = JSON.parse('[{"timeStep":"87", "columns":"A, B"}, {"timeStep":"19", "columns":"C, D"}]');
  // res.write(JSON.stringify(data))
  // res.render('home.ejs');
 
- //res.render('home', {data:data});
- // res.render('index', {title: 'POST test'});
- res.redirect('/')
- res.render("home.ejs", {data: data});
-
+ res.render('index', {data:data});
+ // res.render("home.ejs", {data: data});
+//
     }
 
     else{
