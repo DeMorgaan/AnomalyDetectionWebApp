@@ -2,30 +2,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
     <title>Home Page</title>
     <style type="text/css" media="screen">
         body {
-          align-content: center;
-          align-items: center;
-            background-color: skyblue;
             text-decoration-color: white;
-            font-size:5em;
+            font-family: 'Electrolize', sans-serif;
+              background: #131418;
+              color: #999;
+              text-align: center;
+              font-size: 15px;
         }
     </style>
 </head>
 <body>
-<h3>Presening the results: N-O-W? <h3/>
-
+<h3> Anomalies: <h3/>
   <table>
     <tr>
-      <!-- <%= JSON.stringify(data) %> -->
-      <ul>
-          <% data.forEach(function(o) { %>
-              <li><%= o.timeStep %> - <%= o.columns %></li>
-          <% }); %>
+      <% data.forEach(function(o) { %>
+      <td><%= o.timeStep %></td>
+      <td> - <%= o.columns %></td>
+  <tr>
+  <br/>
+  </tr>
+  <% }); %>
     </tr>
-    <p>Succeed.</p>
-  </table>
+  </table>      <!-- <%= JSON.stringify(data) %> -->
+
+
 
 
 

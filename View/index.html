@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="index.css" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
   <title>Anomaly Detection Server</title>
   <link rel="stylesheet" href="./Anomaly Detection Server_files/index.css">
 </head>
@@ -38,7 +38,7 @@
 
         </div>
 
-        <!--
+
 
         <div class="proper">
           <div class="file-text">
@@ -66,27 +66,13 @@
           <input id="send-file" class="upl-file" type="submit" value="שלח קובץ">
         </div>
 
-      -->
-      <!-- </form> -->
-    </div>
+      <!-- </form>
+    <!-- </div> -->
     <div class="result">
-      <iframe id="iframe" class="iframe" name="result" width="90%" height="400" src="home.ejs">
-        <h3>Presening the results: <h3/>
+      <iframe id="iframe" class="iframe" name="result" width="90%" height="400">
 
       </iframe>
-      <script type="text/javascript">
-      var ifrm = document.getElementById('iframe');
-      var doc = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
 
-      doc.open();
-      if(doc.write){
-          doc.write("<DOCTYPE html><html><body><a href=\"http://google.com\"></a></body></html>");
-      } else {
-         doc.document.write("<DOCTYPE html><html><body>asdasdasdsad<a href=\"http://google.com\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png\"/></a></body></html>");
-      }
-
-      doc.close();
-      </script>
       </form>
 
     </div>
