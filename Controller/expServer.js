@@ -28,12 +28,19 @@ app.get("/", (req, res) => {
 
     // res.sendFile(path.join(__dirname, '../View', 'index.html'));
     res.sendFile('index.html' , { root : __dirname});
-
 })
 
 
+app.get("http://localhost:3030/", (req, res) => {
+  res.send("Hey");
+  console.log("Check");
+   });
+
 app.post("/detect", (req, res) => { // /detect
     // res.write('Calculation of anomalies according to ' + req.body.algos +':\n')
+
+
+
     let algo = req.body.algos
     if(req.files) {
         let file1 = req.files.normalCsv
@@ -45,10 +52,13 @@ app.post("/detect", (req, res) => { // /detect
 
 //Requesting the model server for the data output
         //}
-	/*$.post("http://localhost/3030",{file1:normalData,file2:anomalData,algo:algo},function(data, status){
-    alert("Data: " + data + "\nStatus: " + status);
-     });
-*/
+
+
+     // app.get("", (req, res) => {
+         // res.sendFile("index.html")//there name
+         // res.sendFile(path.join(__dirname, '../View', 'index.html'));
+         // res.sendFile('index.html' , { root : __dirname});
+
 
 //Parsing the returning data from the sever
 
@@ -81,7 +91,7 @@ app.post("/detect", (req, res) => { // /detect
  // res.write(JSON.stringify(data))
  // res.render('home.ejs');
 
- res.render('index', {data:data});
+ // res.render('index', {data:data});
  // res.render("home.ejs", {data: data});
 //
     }
