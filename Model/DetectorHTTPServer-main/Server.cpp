@@ -38,7 +38,7 @@ Files extractData(const char* buf) {
 		line += line2;
 	}
 	line = s.str();
-	cout << "last line" << line << endl;
+	//cout << "last line" << line << endl;
 	std::stringstream newS(line.substr(0, files.size));
 	//strtok data
 	//char* copyOfData;
@@ -61,16 +61,16 @@ Files extractData(const char* buf) {
 		files.file1 += st + '\n';
 		getline(newS, st);
 	}
-	cout << "loop line\n" << files.file1 << endl;
+	//cout << "loop line\n" << files.file1 << endl;
 	getline(newS, st);
 	while (!st.compare(":"))
 	{
 		files.file2 += st + '\n';
 		getline(newS, st);
 	}
-	cout << "loop line\n" << files.file2 << endl;
+	//cout << "loop line\n" << files.file2 << endl;
 	getline(newS, files.algo);
-	cout << "loop line\n" << files.algo << endl;
+	//cout << "loop line\n" << files.algo << endl;
 	return files;
 }
 
@@ -90,7 +90,7 @@ void convertVecrtorToJASON(std::vector<AnomalyReport>& reports, string& s) {
 static void ev_handler(struct mg_connection* nc, int ev, void* p) {
 
 	if (ev == MG_EV_HTTP_REQUEST) {
-		cout << nc->recv_mbuf.buf << endl;
+		//cout << nc->recv_mbuf.buf << endl;
 		Files files = extractData(nc->recv_mbuf.buf);
 		TimeSeriesAnomalyDetector* detector;
 		if (files.algo.compare("hybrid")) {
@@ -101,7 +101,7 @@ static void ev_handler(struct mg_connection* nc, int ev, void* p) {
 		}
 		std::thread l([files, detector]() -> void {
 			TimeSeries t(files.file1.c_str());
-			cout << "file1: " << files.file1.c_str() << endl;
+			//cout << "file1: " << files.file1.c_str() << endl;
 			detector->learnNormal(t); });
 		TimeSeries ts(files.file2.c_str());
 		l.join();
