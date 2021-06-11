@@ -31,22 +31,21 @@ std::string convertVecrtorToJASON(std::vector<AnomalyReport>& reports) {
 	json << "[" << endl;
 	for (auto it = reports.begin(); it < reports.end(); ++it) {
 		json << "	{" << std::endl;
-		json << "		\"timeStep\":" << it->timeStep<< "," <<  endl;
+		json << "		\"timeStep\":" << it->timeStep << "," << endl;
 		json << "		\"columns\":" << "\"" << it->description << "\"" << endl;
 		json << "	}";
 		if (it < reports.end() - 1) { json << ","; }
 		json << endl;
 	}
 	json << "]";
-	cout << json.str() << endl;
 	return json.str();
 }
 
 static void ev_handler(struct mg_connection* nc, int ev, void* p) {
 
 	if (ev == MG_EV_HTTP_REQUEST) {
-		struct http_message* test = (struct http_message*)p;
-		char* data = new char[strlen((test->body.p)) + 1];
+		struct http_message* test= (struct http_message*)p;
+		char* data= new char[strlen((test->body.p)) + 1];
 		strcpy(data, test->body.p);
 		Files files = extractData(data);
 
@@ -63,10 +62,11 @@ static void ev_handler(struct mg_connection* nc, int ev, void* p) {
 		TimeSeries ts(files.file2.c_str());
 		l.join();
 		std::vector<AnomalyReport> v = detector->detect(ts);
-
+	
 		string s = convertVecrtorToJASON(v);
 		cout << "Sent now" << endl;
 		struct http_message* hm = (struct http_message*)p;
+
 		mg_printf(nc, "HTTP/1.1 200 OK\r\nContent-Type: "
 			"application/json\r\nContent-Length: %d\r\n\r\n%s",
 			(int)strlen(s.c_str()), s.c_str());
@@ -80,7 +80,7 @@ int initServer(int port) {
 	struct mg_mgr mgr;
 	struct mg_connection* nc;
 	std::string portToChar = std::to_string(port);
-	static char const* sPort = portToChar.c_str();
+	static char const *sPort = portToChar.c_str();
 	mg_mgr_init(&mgr, NULL);
 	std::cout << "Starting web server on port " << sPort << std::endl;
 	nc = mg_bind(&mgr, sPort, ev_handler);
@@ -91,6 +91,7 @@ int initServer(int port) {
 	s_http_server_opts.document_root = ".";
 	s_http_server_opts.enable_directory_listing = "yes";
 	while (true) {
+		cout << "listen" << endl;
 		mg_mgr_poll(&mgr, 1000);
 	}
 	mg_mgr_free(&mgr);
