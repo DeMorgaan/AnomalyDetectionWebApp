@@ -10,8 +10,7 @@ The user selects an algorithm for detecting anomalies from a drop-down list that
 
 To get the calculation results the customer has to click on "send" button to get the output.
 
-<img src="https://user-images.githubusercontent.com/49268743/120936831-b2eac080-c712-11eb-8b43-0cee511c9a03.png">
-
+<img src="https://user-images.githubusercontent.com/49268743/121658162-ba5ef080-caa9-11eb-9efa-b548763218ae.png">
 
     Directory Hierarchy
 Model:\
