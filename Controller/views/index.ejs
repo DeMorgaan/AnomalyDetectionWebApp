@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <title>Home Page</title>
+    <style type="text/css" media="screen">
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+</head>
+<body>
+<h2><center> Anomalies:</center><h2/>
+  <h3>
+  <table>
+  <tr>
+    <th>Features</th>
+    <th>Time Step</th>
+  </tr>
+  <% data.forEach(function(o) { %>
+  <tr>
+      <td><%= o.columns %></td>
+      <td><%= o.timeStep %></td>
+  </tr>
+  <% }); %>
+  </table>
+  <h3/>
+
+
+
+
+
+
+
+</body>
+
+</html>
