@@ -8,7 +8,7 @@ The server will display for which data an anomaly was discovered and at what tim
 In addition, before the client sends his request he selects according to which algorithm he will want the server to consider anomalies.\
 The user selects an algorithm for detecting anomalies from a drop-down list that includes an based algorithm regression and hybrid algorithm.
 
-To get the calculation results the customer has to click on "send" button to get the output.
+To get the calculation results the customer has to click on "submit" button to get the output.
 
 <img src="https://user-images.githubusercontent.com/49268743/121658162-ba5ef080-caa9-11eb-9efa-b548763218ae.png">
 
