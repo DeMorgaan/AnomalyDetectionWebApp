@@ -35,7 +35,7 @@ View:\
   index.css - a css file that holds all the visibility of our server.\
   
 Controller:\
-  -expServer.js - a Javascript file which used as a server and get requests from client and sends them to model as needed
+  expServer.js - a Javascript file which used as a server and get requests from client and sends them to model as needed
   and vice versa, sends calculations he receives from the model (the anomalies) to the view.\
 
     Installation and Running Instructions
