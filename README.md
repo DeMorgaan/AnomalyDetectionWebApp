@@ -31,8 +31,8 @@ Model:\
    
 View:\
   index.html - a html file that holds all the visibility of our server.\
-  index.ejs - the file which presents the anomalies in table to the client.\
   index.css - a css file that holds all the visibility of our server.\
+  index.ejs - the file which presents the anomalies in table to the client.\
   
 Controller:\
   expServer.js - a Javascript file which used as a server and get requests from client and sends them to model as needed
