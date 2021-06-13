@@ -38,10 +38,14 @@ View:\
 Controller:\
   -expServer.js - a Javascript file which used as a server and get requests from view/client and sends them to model as needed
   and vice versa, sends calculations he receives from the model (the anomalies) to the view.\
-  -views\\index.ejs
+  -views\\index.ejs - the file which presents the anomalies in table to the client
 
     Installation and Running Instructions
-As a client of our server if you want to run the server you need to browse with http://localhost:8080/  .
+As a client of our server if you want to run the server you need to browse with http://localhost:8080/  .\
+In addition you need to run the inner server which calculates the anomalies after sending the appropriate data, so let's get some order:\
+At first,you need to run the Server.cpp file which exists in Model/DetectorHTTPServer-main folder.
+There, you need to type a number of port,in example 3030 (this is the defult port) and after that,you can upload the data in the main server
+of  http://localhost:8080 .
 
 As a developer you need an IDE suitable for running Web Application.
 In addition, you need some installations:
