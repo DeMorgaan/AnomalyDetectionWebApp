@@ -15,9 +15,9 @@ To get the calculation results the customer has to click on "submit" button to g
     Directory Hierarchy
 Model:\
       *getAnomalies.js - a js file which connects to the server of anomalies detector and return to controller the output.\
-      *a folder called DetectorHTTPServer-main which contains (the inner server project of anomalies detector):\
+      *A folder called DetectorHTTPServer-main which contains (the inner server project of anomalies detector):\
 	-Server.cpp - the file the client must run in order to get the anomalies to the controller and then to the browser/client.\
-      -a folder which calls detectorFiles which contains (helper files):\
+      -A folder which calls detectorFiles which contains (helper files):\
 		anomaly_detection_util.cpp/.h\
 		AnomalyDetector.h\
 		CLI.cpp/.h\
@@ -26,7 +26,7 @@ Model:\
 		minCircle.cpp/.h\
 		SimpleAnomalyDetector.cpp/.h\
 		timeseries.cpp/.h\
-      -a library which calls mongoose which contains (library files):\
+      -A library which calls mongoose which contains (library files):\
 		mongoose.c/.h
    
 View:\
