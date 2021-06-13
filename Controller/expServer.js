@@ -39,7 +39,7 @@ app.post("/detect", (req, res) => {
       function () {
           //the data arrive and send to view
           const data = JSON.parse(this.responseText);
-          res.render('index', {data:data});
+          res.render('../../View/index', {data:data});
           res.end();
       })
     }
