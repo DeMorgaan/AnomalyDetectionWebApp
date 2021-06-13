@@ -31,14 +31,12 @@ Model:\
    
 View:\
   index.html - a html file that holds all the visibility of our server.\
-  index.ejs - a ejs file that holds all the visibility of our server.\
+  index.ejs - the file which presents the anomalies in table to the client.\
   index.css - a css file that holds all the visibility of our server.\
-  iframe.html - a html file that holds all the visibility of our server.
-
+  
 Controller:\
-  -expServer.js - a Javascript file which used as a server and get requests from view/client and sends them to model as needed
+  -expServer.js - a Javascript file which used as a server and get requests from client and sends them to model as needed
   and vice versa, sends calculations he receives from the model (the anomalies) to the view.\
-  -views\\index.ejs - the file which presents the anomalies in table to the client
 
     Installation and Running Instructions
 As a client of our server if you want to run the server you need to browse with http://localhost:8080/  .\
