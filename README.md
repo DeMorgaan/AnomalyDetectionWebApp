@@ -44,8 +44,8 @@ Controller:\
 As a client of our server if you want to run the server you need to browse with http://localhost:8080/  .\
 In addition you need to run the inner server which calculates the anomalies after sending the appropriate data, so let's get some order:\
 At first,you need to run the Server.cpp file which exists in Model/DetectorHTTPServer-main folder.
-There, you need to type a number of port,in example 3030 (this is the defult port) and after that,you can upload the data in the main server
-of  http://localhost:8080 .
+There, you need to type a number of port,in example 3030 (this is the defult port) and after that,you can upload your data in the main server
+of http://localhost:8080/ .
 
 As a developer you need an IDE suitable for running Web Application.
 In addition, you need some installations:
@@ -57,7 +57,7 @@ In addition, you need some installations:
 <br>
 
     Documentation/UML
-There is a link to UML charts of the main classes https://lucid.app/lucidchart/8d5ab3a0-95f6-4fae-9831-047a0e0129cd/view?page=0_0#https://lucid.app/lucidchart/8d5ab3a0-95f6-4fae-9831-047a0e0129cd/view?page=0_0%23
+There is a link to UML charts of the main classes https://lucid.app/lucidchart/8d5ab3a0-95f6-4fae-9831-047a0e0129cd/view?page=0_0#https://lucid.app/lucidchart/8d5ab3a0-95f6-4fae-9831-047a0e0129cd/view?page=0_0%23 . And of course for developers there is also documentation of the code in the code files.
 
     Video
 There is a link to a video where we demonstrate the use of the server ..............
