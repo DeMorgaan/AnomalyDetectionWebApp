@@ -51,7 +51,9 @@ In addition, you need some installations:
 2. install npm with https://www.npmjs.com/get-npm
 3. install some modules and packages with the following commands in cmd, when the working directory is the ~\webapplication\Controller:\
   $ npm install express --save\
-  $ npm i express-fileupload
+  $ npm i express-fileupload\
+  $ npm install xmlhttprequest
+
 <br>
 
     Documentation/UML
