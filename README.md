@@ -49,7 +49,7 @@ As a developer you need an IDE suitable for running Web Application.
 In addition, you need some installations:
 1. install Node.js with https://nodejs.org/en/download/
 2. install npm with https://www.npmjs.com/get-npm
-3. install some modules and packages with the following commands in cmd, when the working directory is the ~\webapplication\Controller:\
+3. install some modules and packages with the following commands in cmd, when the working directory is the ~\AnomalyDetectionWebApp\Controller:\
   $ npm install express --save\
   $ npm i express-fileupload\
   $ npm install xmlhttprequest
