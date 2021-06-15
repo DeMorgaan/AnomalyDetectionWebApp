@@ -58,5 +58,5 @@ In addition, you need some installations:
 There is a link to UML charts of the main classes https://lucid.app/lucidchart/8d5ab3a0-95f6-4fae-9831-047a0e0129cd/view?page=0_0#https://lucid.app/lucidchart/8d5ab3a0-95f6-4fae-9831-047a0e0129cd/view?page=0_0%23 .Of course for developers there is also documentation of the code in the code files.
 
     Video
-There is a link to a video where we demonstrate the use of the server ..............
+There is a link to a video where we demonstrate the use of the server https://youtu.be/IBIYnGvgxbM
 
